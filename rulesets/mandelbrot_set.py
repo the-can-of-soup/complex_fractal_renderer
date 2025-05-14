@@ -18,4 +18,4 @@ class Ruleset(RulesetDataStructure):
         return i
 
     def initial_value(self, pixel: complex, inputs: list[complex]) -> complex:
-        return inputs[0]  # allows the user to change the initial value of z by using the z_0 input
+        return inputs[0] # allows changing the initial value of z by using the z_0 input
