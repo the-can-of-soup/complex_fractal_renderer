@@ -687,7 +687,7 @@ def main():
                 traceback.print_exc()
                 print('')
                 print('========================================')
-                print(f'Check "{os.path.join("rulesets", rules["ruleset"])} to try to fix the error.')
+                print(f'Check "{os.path.join("rulesets", rules["ruleset"])}" to try to fix the error.')
                 print('')
                 input('Press ENTER to continue.')
                 continue
@@ -739,7 +739,7 @@ def main():
             }
 
             # position
-            print('Enter the position and zoom level for the camera in the format "R,I,Z".')
+            print('Enter the position and zoom level for the camera in the format "Re,Im,Zoom".')
             print('Zoom should be in pixels per unit.')
             position: list[str] = input(' > ').replace(' ', '').replace(',', 'x').lower().split('x')
             print('')
@@ -808,7 +808,7 @@ def main():
 
                 # inputs
                 print('INPUTS')
-                print('Enter inputs as complex numbers in the format R,I.')
+                print('Enter inputs as complex numbers in the format Re,Im.')
                 print('Invalid inputs will use the default value.')
                 for i in range(len(animation.ruleset_type.inputs_config)):
                     input_config: dict[str, Any] = animation.ruleset_type.inputs_config[i]
@@ -840,7 +840,7 @@ def main():
                 traceback.print_exc()
                 print('')
                 print('========================================')
-                print(f'Check "{os.path.join("rulesets", ruleset_filename)} to try to fix the error.')
+                print(f'Check "{os.path.join("rulesets", ruleset_filename)}" to try to fix the error.')
                 print('')
                 input('Press ENTER to continue.')
                 continue
