@@ -25,6 +25,8 @@
     "r_offset: float                     -> The real offset (x position) of the camera.",
     "i_offset: float                     -> The imaginary offset (y position) of the camera.",
     "zoom: float                         -> The zoom (in pixels per unit) of the camera.",
+    "zoom_log: float                     -> The zoom of the camera, but on a logarithmic scale. Should be in log_10(pixels/unit).",
+    "                                       This is recommended for zoom animations.",
     "inputs: list[list[float, float]...] -> A list of complex numbers that correspond to the new values of each input.",
     "                                       Each complex number is a list of two floats (real and imaginary parts).",
     "input_<n>: list[float, float]       -> The value of input n as a complex number (a list of two floats)."
