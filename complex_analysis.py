@@ -15,7 +15,7 @@ if platform.python_implementation() == 'PyPy': # normal block characters break i
 # noinspection SpellCheckingInspection
 FONT_PATH: str = 'C:/Windows/Fonts/courbd.ttf'
 VALID_EASING_TYPES: list[str] = ['instant', 'linear', 'in', 'out', 'in_out']
-VALID_SUB_ACTION_PROPERTY_NAMES: list[str] = ['position', 'r_offset', 'i_offset', 'zoom', 'inputs']
+VALID_SUB_ACTION_PROPERTY_NAMES: list[str] = ['position', 'r_offset', 'i_offset', 'zoom', 'zoom_log', 'inputs']
 FOLDER_NAMES: list[str] = ['animation_rules', 'frames', 'renders', 'rulesets']
 
 def clear_screen() -> None:
@@ -353,6 +353,8 @@ class Animation:
             return self.position[1]
         elif property_name == 'zoom':
             return self.position[2]
+        elif property_name == 'zoom_log':
+            return math.log10(self.position[2])
         elif property_name == 'inputs':
             return [[z.real, z.imag] for z in self.inputs]
         elif property_name.startswith('input_'):
@@ -368,6 +370,8 @@ class Animation:
             self.position = self.position[0], value, self.position[2]
         elif property_name == 'zoom': # value is float
             self.position = self.position[0], self.position[1], value
+        elif property_name == 'zoom_log': # value is float
+            self.position = self.position[0], self.position[1], 10 ** value
         elif property_name == 'inputs': # value is list[list[float]] (sub-lists represent complex numbers)
             self.inputs = []
             for z in value:
@@ -545,7 +549,7 @@ class Animation:
                     assert len(sub_action['value']) == 3, f'Value must be a length 3 list for the property "{property_name}" in sub-action #{j} in action #{i}!'
                     assert is_float(sub_action['value'][0]) and is_float(sub_action['value'][1]) and is_float(sub_action['value'][2]), f'Value must be a list of 3 floats for the property "{property_name}" in sub-action #{j} in action #{i}!'
                     assert sub_action['value'][2] > 0, f'Third item of list "value" must be greater than 0 for the property "{property_name}" in sub-action #{j} in action #{i}!'
-                elif property_name in ('r_offset', 'i_offset', 'zoom'):
+                elif property_name in ('r_offset', 'i_offset', 'zoom', 'zoom_log'):
                     assert is_float(sub_action['value']), f'Value must be a float for the property "{property_name}" in sub-action #{j} in action #{i}!'
                     if property_name == 'zoom':
                         assert sub_action['value'] > 0, f'Value must be greater than 0 for the property "{property_name}" in sub-action #{j} in action #{i}!'
