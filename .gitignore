@@ -1,0 +1,12 @@
+animation_rules/*
+!animation_rules/template.json
+
+rulesets/*
+!rulesets/template.py
+
+frames/
+old_frames/
+renders/
+run_with_pypy.bat
+
+.idea/
