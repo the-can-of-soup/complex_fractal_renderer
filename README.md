@@ -10,7 +10,7 @@ A Python program for rendering video or still frames of fractals that use comple
 5. Run `main.py` at least once. You can close the window after text appears in the terminal.
 
 ## How to Use
-1. Create a ruleset (fractal), or choose an existing one. If creating your own, make a copy of `template.py` in the `rulesets` folder, name it whatever you want, and modify its function contents.\
+1. Create a ruleset (fractal), or choose an existing one. If creating your own, make a copy of `template.py` in the `rulesets` folder, name it whatever you want, and modify the `Ruleset` class' contents.\
    Some built-in rulesets are the Mandelbrot Set and Newton Fractals.
 2. If you are making a video, create an animation. This should be a JSON file in the `animation_rules` folder. See `animation_rules/template.json` for information about how to create an animation.
 3. Run `main.py` and select your render options.
