@@ -18,6 +18,12 @@ VALID_EASING_TYPES: list[str] = ['instant', 'linear', 'in', 'out', 'in_out']
 VALID_SUB_ACTION_PROPERTY_NAMES: list[str] = ['position', 'r_offset', 'i_offset', 'zoom', 'inputs']
 FOLDER_NAMES: list[str] = ['animation_rules', 'frames', 'renders', 'rulesets']
 
+def clear_screen() -> None:
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+
 def get_complex_from_pixel(x: float, y: float, width: int, height: int, real_offset: float = 0, imaginary_offset: float = 0, zoom: float = 100) -> complex:
     # find the complex number representing the center of pixel (x,y) in an image of size (width,height)
     # zoom represents number of pixels per 1 unit
@@ -318,7 +324,7 @@ class Animation:
             self.length += round(action['length'] * self.frame_rate)
 
     def show_progress_bar(self, extra: str | None = None):
-        os.system('cls')
+        clear_screen()
         print('COMPLEX ANALYSIS')
         print('--------------------')
         print('')
@@ -571,7 +577,7 @@ def main():
             os.mkdir(folder)
 
     while True:
-        os.system('cls')
+        clear_screen()
         print('COMPLEX ANALYSIS')
         print('--------------------')
         print('')
@@ -581,7 +587,7 @@ def main():
         if mode == 'a':
             # ANIMATION MODE
 
-            os.system('cls')
+            clear_screen()
             print('COMPLEX ANALYSIS')
             print('--------------------')
             print('')
@@ -649,7 +655,7 @@ def main():
                 # render frames
                 animation.render()
 
-                os.system('cls')
+                clear_screen()
                 print('COMPLEX ANALYSIS')
                 print('--------------------')
                 print('')
@@ -689,7 +695,7 @@ def main():
         elif mode == 's':
             # STATIC IMAGE MODE
 
-            os.system('cls')
+            clear_screen()
             print('COMPLEX ANALYSIS')
             print('--------------------')
             print('')
