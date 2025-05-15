@@ -325,7 +325,7 @@ class Animation:
 
     def show_progress_bar(self, extra: str | None = None):
         clear_screen()
-        print('COMPLEX ANALYSIS')
+        print('COMPLEX FRACTAL RENDERER')
         print('--------------------')
         print('')
         print('Rendering animation...')
@@ -582,7 +582,7 @@ def main():
 
     while True:
         clear_screen()
-        print('COMPLEX ANALYSIS')
+        print('COMPLEX FRACTAL RENDERER')
         print('--------------------')
         print('')
         print('Enter "a" to render an animation, or "s" to render a static image.')
@@ -592,7 +592,7 @@ def main():
             # ANIMATION MODE
 
             clear_screen()
-            print('COMPLEX ANALYSIS')
+            print('COMPLEX FRACTAL RENDERER')
             print('--------------------')
             print('')
             print('For information about creating an animation, look at')
@@ -660,7 +660,7 @@ def main():
                 animation.render()
 
                 clear_screen()
-                print('COMPLEX ANALYSIS')
+                print('COMPLEX FRACTAL RENDERER')
                 print('--------------------')
                 print('')
                 print('Finalizing...')
@@ -700,7 +700,7 @@ def main():
             # STATIC IMAGE MODE
 
             clear_screen()
-            print('COMPLEX ANALYSIS')
+            print('COMPLEX FRACTAL RENDERER')
             print('--------------------')
             print('')
             print('For information about creating a ruleset, look at')
