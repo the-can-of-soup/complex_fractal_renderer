@@ -65,7 +65,7 @@ class Ruleset(RulesetDataStructure):
             return 0, 0, 0, 255
 
         # otherwise rotate hue based on iteration count
-        rgb_float: tuple[float, float, float] = colorsys.hsv_to_rgb((iteration_count / 100) % 1, 1, 1)
+        rgb_float: tuple[float, float, float] = colorsys.hsv_to_rgb((iteration_count / 200) % 1, 1, 1)
         return round(rgb_float[0] * 255), round(rgb_float[1] * 255), round(rgb_float[2] * 255), 255
 
     def reset_variables(self):
