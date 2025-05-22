@@ -145,7 +145,7 @@ class RulesetDataStructure:
         # reset variables
         self.reset_variables()
 
-        # set self.max_iterations so that other methods have the information
+        # save max_iterations as an attribute of self
         self.max_iterations = max_iterations
 
         # apply iteration rule repeatedly
