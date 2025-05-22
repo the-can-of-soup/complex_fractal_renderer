@@ -189,7 +189,7 @@ class RulesetDataStructure:
         if show_inputs:
             for i in range(len(inputs)):
                 # get config and position
-                config: dict[str, Any] = self.__class__.inputs_config[i]
+                config: dict[str, Any] = self.inputs_config[i]
                 value: complex = inputs[i]
                 xy: tuple[float, float] = get_pixel_from_complex(value, width, height, real_offset, imaginary_offset, zoom)
                 radius: float = 10
@@ -214,7 +214,7 @@ class RulesetDataStructure:
             # loop through inputs first to find the longest name
             longest_name_length: int = 0
             for i in range(len(inputs)):
-                config: dict[str, Any] = self.__class__.inputs_config[i]
+                config: dict[str, Any] = self.inputs_config[i]
                 if 'display_color' in config:
                     if config['display_color'] is None:
                         continue
@@ -226,7 +226,7 @@ class RulesetDataStructure:
             xy: tuple[float, float] = (5, 5)
             for i in range(len(inputs)):
                 # get config
-                config: dict[str, Any] = self.__class__.inputs_config[i]
+                config: dict[str, Any] = self.inputs_config[i]
                 display_color: tuple[int, int, int, int] | None = (255, 255, 255, 255)
                 if 'display_color' in config:
                     display_color = config['display_color']
@@ -256,7 +256,7 @@ class RulesetDataStructure:
     @property
     def default_inputs(self) -> list[complex]:
         inputs: list[complex] = []
-        for i in self.__class__.inputs_config:
+        for i in self.inputs_config:
             inputs.append(i['default_value'])
         return inputs
 
