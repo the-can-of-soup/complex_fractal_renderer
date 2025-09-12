@@ -1,0 +1,19 @@
+{
+  "_": [
+    "Zoom amount: log_10(1326879879 * (1080/360)) = 9.5999528632"
+  ],
+  "ruleset": "mandelbrot_set.py",
+  "frame_rate": 24,
+  "resolution": [1920, 1080],
+  "max_iterations": 4096,
+  "show_inputs": false,
+  "show_displays": false,
+  "actions": [
+    {"easing": "instant", "length": 0, "data": [{"name": "position", "value": [0, 0, 200]}]},
+    {"easing": "instant", "length": 1, "data": []},
+    {"easing": "in_out", "length": 1, "data": [{"name": "position", "value": [-0.64683913, 0.4229464, 200]}]},
+    {"easing": "instant", "length": 1, "data": []},
+    {"easing": "linear", "length": 16, "data": [{"name": "zoom_log", "value": 9.5999528632}]},
+    {"easing": "instant", "length": 1, "data": []}
+  ]
+}
