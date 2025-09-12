@@ -1,5 +1,6 @@
 animation_rules/*
 !animation_rules/template.json
+!animation_rules/2025_breakthrough_junior_challenge.json
 
 frames/
 old_frames/
